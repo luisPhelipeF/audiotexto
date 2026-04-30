@@ -8,19 +8,25 @@
 npm install
 ```
 
-2. Gere o APK release:
+2. Se a pasta `android/` nao existir na sua maquina, gere o nativo primeiro:
+
+```bash
+npx expo prebuild --platform android
+```
+
+3. Gere o APK release:
 
 ```bash
 npm run build:android:apk
 ```
 
-3. O arquivo final fica em:
+4. O arquivo final fica em:
 
 ```text
 android/app/build/outputs/apk/release/app-release.apk
 ```
 
-4. Para instalar com cabo e `adb`:
+5. Para instalar com cabo e `adb`:
 
 ```bash
 adb install -r android/app/build/outputs/apk/release/app-release.apk

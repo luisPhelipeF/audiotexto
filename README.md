@@ -1,29 +1,44 @@
 # Audiotexto
 
-Audiotexto e um app feito para ajudar professoras e professores a transformar aulas e notas de audio em texto organizado.
+Aplicativo de transcricao de audio para texto, pensado para ajudar professoras e professores a registrar aulas inteiras ou notas de voz curtas de forma organizada.
 
-O foco do projeto e ser simples de usar, funcional no dia a dia e util tanto para aulas inteiras quanto para pequenos registros de voz.
+Audiotexto foi criado com uma meta bem pratica: transformar gravacoes em texto util, com um fluxo simples, rapido e pronto para consulta futura no Google Drive e no Google Docs.
 
-## O que o app faz
+## Visao Geral
 
-- grava audio no celular
-- importa arquivos de audio
-- transcreve usando Deepgram
-- organiza as transcricoes por data e sequencia
-- permite login com Google
-- exporta transcricoes para Google Docs
-- salva os documentos de forma organizada no Google Drive
+O app permite:
 
-## Objetivo do projeto
+- gravar audio no celular
+- importar arquivos de audio
+- transcrever com Deepgram
+- organizar transcricoes por data e sequencia
+- entrar com Google
+- exportar para Google Docs
+- guardar os documentos em uma pasta dedicada no Google Drive
 
-O app foi pensado para uma professora poder registrar suas aulas em formato de texto com o minimo de atrito possivel.
+## Para Quem Foi Feito
 
-Em vez de ficar presa a notas soltas, a ideia e ter um fluxo pratico para:
+O caso de uso principal e uma professora registrar suas aulas em texto sem depender de um processo manual cansativo.
 
-- gravar aulas completas
-- registrar notas de voz curtas
-- transformar tudo em texto
-- guardar isso em um lugar facil de consultar depois
+Na pratica, isso atende bem cenarios como:
+
+- aula completa gravada em audio
+- observacoes faladas ao longo do dia
+- notas de voz rapidas para transformar em material consultavel depois
+
+## Como o Fluxo Funciona
+
+1. A pessoa grava ou importa um audio.
+2. O app envia esse audio para transcricao.
+3. O texto volta para o app e fica salvo localmente.
+4. Se a pessoa estiver autenticada com Google, a transcricao tambem pode ser exportada para Google Docs.
+5. Os documentos ficam organizados dentro do Google Drive do usuario.
+
+## Filosofia do Projeto
+
+O objetivo nao e ser um app cheio de enfeites. O objetivo e ser funcional e eficiente.
+
+Ele foi pensado para trabalhar com conteudo real, incluindo aulas longas, e nao apenas com demos curtas. Ainda assim, existe uma observacao honesta importante: o tempo de transcricao e os limites praticos dependem de servicos externos, qualidade da internet, tamanho do arquivo e capacidade do dispositivo.
 
 ## Stack
 
@@ -35,7 +50,7 @@ Em vez de ficar presa a notas soltas, a ideia e ter um fluxo pratico para:
 - Deepgram
 - Google Docs API
 
-## Como rodar localmente
+## Rodando Localmente
 
 1. Instale as dependencias:
 
@@ -57,7 +72,7 @@ cp .env.example .env
 npm start
 ```
 
-## Variaveis de ambiente
+## Variaveis de Ambiente
 
 Use o arquivo [.env.example](./.env.example) como modelo.
 
@@ -83,6 +98,17 @@ Para Android, existe um guia rapido em [ANDROID.md](./ANDROID.md).
 
 Para gerar build Android com login Google/Firebase nativo, mantenha um `google-services.json` local na raiz do projeto. Esse arquivo nao faz parte do repositorio publico.
 
+## Releases
+
+O passo a passo de novas versoes esta em [RELEASING.md](./RELEASING.md).
+
+Esse guia cobre:
+
+- checklist antes do release
+- aumento de versao
+- geracao de APK
+- publicacao de tag e release no GitHub
+
 ## Seguranca
 
 - `.env` nao deve ser versionado
@@ -91,6 +117,18 @@ Para gerar build Android com login Google/Firebase nativo, mantenha um `google-s
 
 Existe um checklist de publicacao em [PUBLIC_REPO_CHECKLIST.md](./PUBLIC_REPO_CHECKLIST.md).
 
-## Observacao honesta
+## Limites Praticos
 
-O app foi desenhado para ser util em transcricoes longas, como aulas inteiras, mas o tempo final ainda depende do tamanho do audio, da internet e dos servicos externos usados na transcricao.
+Audiotexto foi desenhado para uso real com audios longos, inclusive aulas inteiras. Mas nao existe “sem limite” de forma absoluta, porque o app depende de APIs e infraestrutura externas.
+
+Na pratica, o que mais influencia e:
+
+- tamanho do audio
+- velocidade de upload
+- estabilidade da internet
+- tempo de resposta do Deepgram
+- configuracao do login Google e do Firebase
+
+## Licenca
+
+Este projeto esta licenciado sob a licenca MIT. Veja [LICENSE](./LICENSE).
