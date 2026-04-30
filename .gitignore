@@ -31,10 +31,23 @@ yarn-error.*
 *.pem
 
 # local env files
-.env*.local
+.env
+.env.*
+!.env.example
 
 # typescript
 *.tsbuildinfo
+
+# local editor settings
+.vscode/
+
+# Firebase / Google local config
+google-services.json
+GoogleService-Info.plist
+
+# mobile build artifacts
+*.apk
+*.aab
 
 # generated native folders
 /ios
